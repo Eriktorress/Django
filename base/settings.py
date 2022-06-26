@@ -37,9 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'gestor.apps.GestorConfig',
     #'corsheaders',
     #'rest_framework',
+=======
+    'gestor',
+    'corsheaders'
+    'rest_framework'
+    'rest_framework'
+>>>>>>> b64500068c652d1843d8da194d61c8c218a3c1e8
 ]
 
 MIDDLEWARE = [
