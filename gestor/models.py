@@ -20,3 +20,12 @@ class Usuarios(models.Model):
     
     def __str__(self) :
         return f"{self.rut} - {self.nombre} {self.apellido}"
+
+class Profesion (models.Model):
+    idprof = models.CharField (verbose_name='Id', max_length=100)
+    nombre_prof = models.CharField (verbose_name='Nombre Profesión', max_length=100)
+
+    def __str__(self) :
+        return f"{self.id} - {self.nombre_prof}"
+
+    

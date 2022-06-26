@@ -1,10 +1,8 @@
-from dataclasses import field
-from pyexpat import model
-from rest_fremework import serializers
-from .models import tarea 
+from rest_framework import serializers
+from .models import Profesion 
 
 
-class tareaserializer(serializers.modelserializers):
+class ProfSerializer(serializers.ModelSerializer):
     class meta:
-        model=tarea
+        model= Profesion
         field = ('id', 'titulo','descripcion', 'completado')
