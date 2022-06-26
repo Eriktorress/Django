@@ -8,10 +8,8 @@ import { Dashboard } from './components/Dashboard';
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to React Router!</h1>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
+        <Route path="/" element={<Login />} />
         <Route path="Login" element={<Login />} />
         <Route path="Dasboard" element={<Dashboard />} />
       </Routes>
@@ -33,7 +31,7 @@ function Home() {
   );
 }
 
-function About() {
+function about() {
   return (
     <>
       <main>
@@ -44,7 +42,7 @@ function About() {
         </p>
       </main>
       <nav>
-        <Link to="/">Home</Link>
+        <Link to="/Dashboard">Home</Link>
       </nav>
     </>
   );
