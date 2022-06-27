@@ -31,4 +31,4 @@ $RECYCLE.BIN/
 .history/
 *.code-workspace
 
-entorno/* 
+.entorno/
