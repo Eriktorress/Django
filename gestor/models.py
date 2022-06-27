@@ -17,6 +17,7 @@ class Usuarios(models.Model):
     apellido = models.CharField (verbose_name='Apellido', max_length=100)
     rut = models.CharField (verbose_name='Rut', max_length=10)
     email = models.CharField (verbose_name='Email', max_length=100)
+    contrasena =  models.CharField (verbose_name='Constraseña', max_length=10)
     
     def __str__(self) :
         return f"{self.rut} - {self.nombre} {self.apellido}"
