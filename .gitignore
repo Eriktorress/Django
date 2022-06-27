@@ -1,6 +1,6 @@
 
 entorno/
-
+pyvenv.cfg
 # Python
 *.pyc
 *~
