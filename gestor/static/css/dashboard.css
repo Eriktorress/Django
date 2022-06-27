@@ -1,0 +1,116 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+ :root {
+     --primary: #343a40;
+     --light: #ffffff;
+     --grey: #efefef;   
+ }
+
+body {
+    overflow: hidden;
+    font-family: 'Muli',sans-serif;
+    font-weight: 300;
+    color: var(--primary)
+}
+
+header { 
+    width: 100%;
+    height: 80%;
+    background: #f5f5f5f5;
+    align-items: center;
+    top: 0%;
+    z-index: 200px;
+}
+                            
+/* Todos los link no tengan la linea debajo*/
+a:hover {
+    text-decoration: none;
+}
+
+.menu a {
+    text-decoration: none;
+}
+
+.icon__menu{
+    width: 50px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(10px);
+}
+
+.icon__menu i{
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.bg-primary { background-color: var(--primary) !important;}
+.bg-light {background-color: var(--light)!important;}
+.bg-mix {background: linear-gradient(180deg, var(--light) 50%, var(--grey) 0);}
+.bg-grey {background-color: var(--grey) !important;}
+
+/* Botones sin bordes*/
+.btn {
+    border: 0;
+}
+.btn-primary {
+    background-color: var(--primary);
+}
+
+
+.btn-primary:hover {
+    background-color: var(--primary);
+}
+
+#sidebar-container {
+    width: 180 px;
+}
+.container {
+    border : 1px solid var(--grey);
+
+}
+
+#sidebar-container .logo {
+    padding: .875rem 2rem;  
+}
+
+#sidebar-container .menu {
+    width: 15rem;
+    
+}
+
+.btn-search {
+    right:5px;
+}
+
+.avatar {
+    max-width: 50px;
+}
+
+#content {
+    overflow: auto;
+    height: 100vh;
+    padding-bottom: 5rem;
+}
+
+.stat {
+    border-right: 1px solid var(--grey);
+}
+
+/*Clases para usar en JavaScript*/
+
+.body_move{
+    margin-left: 250px;
+}
+
+.menu__side_move{
+    width: 250px;
+}
+
