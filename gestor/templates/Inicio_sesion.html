@@ -40,6 +40,7 @@
                     </form>
 
                     <!--Register-->
+                    {% for Usuario in Usuario %}
                     <form action="" class="formulario__register">
                         <h2>Regístrarse</h2>
                         <input type="username" placeholder="Nombre completo">
@@ -48,10 +49,10 @@
                         <input type="password2" placeholder="Contraseña">
                         <button>Regístrarse</button>
                     </form>
-                    {{Usuarios}}
                 </div>
+                {% endfor %}
             </div>
-
+            
         </main>
 
         <script src="JS/Untitled-2.js"></script>
