@@ -13,11 +13,11 @@ class Trabajadores(models.Model):
         return f"{self.rut} - {self.nombre} {self.apellido}"
     
 class Usuarios(models.Model):
-    nombre = models.CharField (verbose_name='Nombre', max_length=100)
-    apellido = models.CharField (verbose_name='Apellido', max_length=100)
-    rut = models.CharField (verbose_name='Rut', max_length=10)
+    nombre = models.CharField (verbose_name='Nombre completo', max_length=100)
     email = models.CharField (verbose_name='Email', max_length=100)
-    contrasena =  models.CharField (verbose_name='Constraseña', max_length=10)
+    usuario = models.CharField (verbose_name='Email', max_length=100)
+    #contrasena = models.CharField (verbose_name='Email', max_length=100)
+
     
     def __str__(self) :
         return f"{self.rut} - {self.nombre} {self.apellido}"
