@@ -6,16 +6,6 @@ import { Dashboard } from './Dashboard';
 
 export const Login = () => {
 
-    const comprobarSesion = () => {
-        var sesion = localStorage.getItem("miLogin");
-        if(sesion){
-          return JSON.parse(sesion);
-        }else{
-          return false;
-        }
-      }
-    
-    
     
       const [miLogin, setMiLogin] = useState(comprobarSesion());
       const [usu, setUsu] = useState("");
