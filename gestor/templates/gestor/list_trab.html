@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +19,7 @@
     <!-- Fuente Roboto tamaño 300-400 y 700-->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="Imagenes/iluminati.png">
-    <link href="CSS/Listado_trabajadores.css" rel="stylesheet">
+    <link rel="stylesheet" href= "{% static 'css/list_trab.css' %}">
     <title>Registro de Usuarios</title>
 
     <h1>Listado de Trabajadores</h1>
@@ -64,7 +66,7 @@
         <div class="task-wrapper" data-position="0">
             <div class="task-title">
                 <div class="task-complete-icon"></div>
-                <i><a href="http//#">{{trabajadores.nombre}}</a></i>
+                <i><a href="http//#">{{Trabajadores.nombre}}</a></i>
             </div>
             <div div class="task-controls">
                 <a class="delete-link" href="tarea_eliminar.html">&#215;</a>
