@@ -42,7 +42,10 @@ INSTALLED_APPS = [
     'gestor.apps.GestorConfig',
     'corsheaders',
     'rest_framework',
+    'crispy_forms',
 ]
+
+CRISPY_TEMAPLATE_PACK ='bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

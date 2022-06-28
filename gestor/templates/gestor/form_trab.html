@@ -2,10 +2,11 @@
 {% extends 'gestor/home.html'%}
 {% load static %}
 {% block content %}
+{% load crispy_forms_tags %}
 
 
 <div class="row">
-    <div class="col-12 col-md-6 offset-md-3">
+    <div class="col-12 col-md-6 offset-md-5">
 
         <div class="card">
             <div class="card-body">
@@ -15,13 +16,14 @@
 
         {% csrf_token %}
 
-        {{ form }}
+        {{ form  | crispy }}
+
+        <br>
 
         <div class="d-flex justify-content-center">
-        <button type="submit" id="btnEnviar" class="button" value="Guardar"></button>
-        <input type="reset" value="Cancelar" class="btn btn-secondary">
+            <button type="submit" id="btnEnviar" class="btn btn-primary"> Guardar</button>
              &nbsp;
-        <input type="reset" value="guardar" class="btn btn-secondary">
+            <a href="{% url 'listado-trabajador'%}"> <button type="button" class="btn btn-secondary">Cancelar</button></a>
 
         </div>
     </form>
