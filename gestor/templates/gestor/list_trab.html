@@ -1,58 +1,52 @@
 {% extends 'gestor/home.html'%}
 
-{% load static %}
-
-{% block css %}
-
-{% endblock %}
-
 {% block content %}
 
 
-    <h1>Listado de Trabajadores</h1>
+<h1>Listado de Trabajadores</h1>
 
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a href="{% url 'form_trab'%}"> <button type="button" class="btn btn-dark">+ Nuevo
-                Trabajador</button></a>
-    </div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a href="{% url 'form_trab'%}"> <button type="button" class="btn btn-dark">+ Nuevo
+            Trabajador</button></a>
+</div>
+<hr>
+<section class="webdesigntuts-workshop">
+    <form action="" method="">
+        <input type="search" placeholder="Ingrese Busqueda">
+        <button class="btn btn-secondary"> Buscar</button>
+    </form>
+</section>
+<br>
+<table class="table table-striped table-hover table-responsive-sm">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">Rut</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Email</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    {% for Trabajadores in listado %}
+    <tbody>
+        <tr>
+            <th>{{Trabajadores.rut}}</th>
+            <td>{{Trabajadores.nombre}} </td>
+            <th>{{Trabajadores.apellido}}</th>
+            <td>{{Trabajadores.email}}</td>
+            <td><a class="but" href="Dashboard.html">Editar</a></td>
+        </tr>
+    </tbody>
 
-    <section class="webdesigntuts-workshop">
-        <form action="" method="">
-            <input type="search" placeholder="Ingrese Busqueda">
-            <button>Correo Electronico</button>
-        </form>
-    </section>
-  
-    <table class="table table-striped table-hover table-responsive-sm">
-        <thead class="table-dark">
-            <tr>
-                <th scope="col">Rut</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellidos</th>
-                <th scope="col">Correo Electronico</th>s
-                <th scope="col">Acciones</th>
-            </tr>
-        </thead>
-        {% for Trabajadores in listado %}
-        <tbody>
-            <tr>
-                <th>{{Trabajadores.rut}}</th>
-                <td>{{Trabajadores.nombre}} </td>
-                <th>{{Trabajadores.apellido}}</th>
-                <td>{{Trabajadores.email}}</td>
-                <td><a class="but" href="Dashboard.html">Editar</a></td>
-            </tr>
-        </tbody>
+    {% endfor %}
 
-        {% endfor %}
-
-    </table>
+</table>
 
 <footer>
-
-    <a href="{% url 'Dashboard'%}"> <button type="button" class="btn btn-dark">Volver</button></a>
-  
-
+    <div class="d-flex justify-content-center">
+        <a href="{% url 'Dashboard'%}"> <button type="button" type="button"
+                class="btn btn-secondary">Volver</button></a>
+    </div>
 </footer>
 
 {% endblock %}
