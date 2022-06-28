@@ -3,7 +3,11 @@
 {% load static %}
 {% block content %}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+{% load crispy_forms_tags %}
+>>>>>>> b4c7f56a59306ada3d29840ab6e0344640213e60
 =======
 {% load crispy_forms_tags %}
 >>>>>>> b4c7f56a59306ada3d29840ab6e0344640213e60
@@ -21,6 +25,7 @@
         {% csrf_token %}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         {{ form }}
 
         <div class="d-flex justify-content-center">
@@ -29,6 +34,8 @@
              &nbsp;
         <input type="reset" value="guardar" class="btn btn-secondary">
 =======
+=======
+>>>>>>> b4c7f56a59306ada3d29840ab6e0344640213e60
         {{ form  | crispy }}
 
         <br>
@@ -37,6 +44,9 @@
             <button type="submit" id="btnEnviar" class="btn btn-primary"> Guardar</button>
              &nbsp;
             <a href="{% url 'listado-trabajador'%}"> <button type="button" class="btn btn-secondary">Cancelar</button></a>
+<<<<<<< HEAD
+>>>>>>> b4c7f56a59306ada3d29840ab6e0344640213e60
+=======
 >>>>>>> b4c7f56a59306ada3d29840ab6e0344640213e60
 
         </div>
