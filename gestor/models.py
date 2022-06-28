@@ -10,14 +10,14 @@ class Trabajadores(models.Model):
     nombre = models.CharField (verbose_name='Nombre', max_length=100)
     apellido = models.CharField (verbose_name='Apellido', max_length=100)
     rut = models.CharField (verbose_name='Rut', max_length=10)
-    email = models.CharField (verbose_name='Email', max_length=100)
+    email = models.EmailField ()
 
     def __str__(self) :
         return f"{self.rut} - {self.nombre} {self.apellido}"
 class Usuarios(models.Model):
     nombre_com = models.CharField (verbose_name='Nombre completo', max_length=100,  blank=True )
     user = models.CharField (verbose_name='Usuario', max_length=100, blank=True)
-    email = models.CharField (verbose_name='Email', max_length=100)
+    email = models.EmailField ()
     contrasena = models.CharField (verbose_name='Contraseña', max_length=10, blank=True)
 
     def __str__(self) :

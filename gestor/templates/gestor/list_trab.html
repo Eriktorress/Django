@@ -11,10 +11,8 @@
     <h1>Listado de Trabajadores</h1>
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-
-        <a href="{% url 'agregar_trabajador'%}"> <button type="button" class="btn btn-dark">+ Nuevo
+        <a href="{% url 'form_trab'%}"> <button type="button" class="btn btn-dark">+ Nuevo
                 Trabajador</button></a>
-
     </div>
 
     <section class="webdesigntuts-workshop">
@@ -23,13 +21,13 @@
             <button>Correo Electronico</button>
         </form>
     </section>
-
   
     <table class="table">
         <thead class="table-dark">
             <tr>
                 <th scope="col">Rut</th>
-                <th scope="col">nombre</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellidos</th>
                 <th scope="col">Correo Electronico</th>s
                 <th scope="col">Acciones</th>
             </tr>
@@ -39,6 +37,7 @@
             <tr>
                 <th>{{Trabajadores.rut}}</th>
                 <td>{{Trabajadores.nombre}} </td>
+                <th>{{Trabajadores.apellido}}</th>
                 <td>{{Trabajadores.email}}</td>
                 <td><a class="but" href="Dashboard.html">Editar</a></td>
             </tr>
@@ -48,12 +47,10 @@
 
     </table>
 
-    {{listado}}
-
 <footer>
 
-    <a class="boton" href="Dashboard.html">Volver</a>
-
+    <a href="{% url 'Dashboard'%}"> <button type="button" class="btn btn-dark">Volver</button></a>
+  
 
 </footer>
 
