@@ -32,7 +32,6 @@ def Formulario_Usuario (request):
     return render(request,'Formulario_Usuario.html')
 
 
-
 #TRABAJADORES
 def list_trab(request):
     listado = Trabajadores.objects.all();
