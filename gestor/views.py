@@ -1,8 +1,8 @@
 from django.shortcuts import redirect, render, get_object_or_404
 from .serializers import ProfSerializer
 from rest_framework import viewsets
-from .models import Profesion, Trabajadores
-from .forms import TrabajadorForm 
+from .models import Centros, Profesion, Trabajadores
+from .forms import TrabajadorForm, CentroForm
 
 
 # Create your views here.
@@ -79,4 +79,23 @@ def eliminar_trab(request, id):
 
     return redirect(to="listado-trabajador")
 
+def list_centro(request):
+    listado = Centros.objects.all();
+    return render(request, 'gestor/list_centr.html', {'listado':listado})
 
+
+def form_centr(request):
+
+    data = {
+        'form': CentroForm()
+        
+    }
+
+    if request.method == 'POST':
+        formulario = CentroForm (data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"]="Registro de trabajador guardado con exito"
+        else:
+            data["form"] = formulario
+    return render(request, 'gestor/form_cent.html', data)
