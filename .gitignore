@@ -1,5 +1,7 @@
 
 entorno/
+entorno/*
+.entorno/*
 pyvenv.cfg
 # Python
 *.pyc

@@ -7,7 +7,6 @@
 {% endblock %}
 
 {% block content %}
-    <title>Registro de Usuarios</title>
 
     <h1>Listado de Trabajadores</h1>
 
@@ -15,7 +14,6 @@
 
         <a href="{% url 'agregar_trabajador'%}"> <button type="button" class="btn btn-dark">+ Nuevo
                 Trabajador</button></a>
-
 
     </div>
 
@@ -26,37 +24,26 @@
         </form>
     </section>
 
-
+  
     <table class="table">
         <thead class="table-dark">
             <tr>
-                <th scope="col">Nombre de Usuario</th>
                 <th scope="col">Rut</th>
-                <th scope="col">Correo Electronico</th>
+                <th scope="col">nombre</th>
+                <th scope="col">Correo Electronico</th>s
                 <th scope="col">Acciones</th>
             </tr>
         </thead>
+        {% for Trabajadores in listado %}
         <tbody>
             <tr>
-                <th scope="row">Erik Torres</th>
-                <td>17.222.888-1 </td>
-                <td>Erick@duocuc.cl</td>
+                <th>{{Trabajadores.rut}}</th>
+                <td>{{Trabajadores.nombre}} </td>
+                <td>{{Trabajadores.email}}</td>
                 <td><a class="but" href="Dashboard.html">Editar</a></td>
             </tr>
         </tbody>
 
-
-        {% for Trabajadores in listado %}
-        <div class="task-wrapper" data-position="0">
-            <div class="task-title">
-                <div class="task-complete-icon"></div>
-                <i><a href="http//#">{{Trabajadores.nombre}}</a></i>
-            </div>
-            <div div class="task-controls">
-                <a class="delete-link" href="tarea_eliminar.html">&#215;</a>
-                <span class="handle">&nbsp;&#10247;</span>
-            </div>
-        </div>
         {% endfor %}
 
     </table>
