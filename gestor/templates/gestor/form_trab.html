@@ -1,8 +1,21 @@
 {% extends 'gestor/home.html'%}
 {% load static %}
 {% block content %}
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
 {% load crispy_forms_tags %}
+<<<<<<< HEAD
 <br>
+=======
+>>>>>>> b4c7f56a59306ada3d29840ab6e0344640213e60
+=======
+{% load crispy_forms_tags %}
+>>>>>>> b4c7f56a59306ada3d29840ab6e0344640213e60
+
+
+>>>>>>> c2467bd2fb3390f2cdb7a21c6ce31119e565f24b
 <div class="row">
     <div class="col-12 col-md-6 offset-md-6">
         <h2>Formulario de Trabajadores</h2>
@@ -13,6 +26,7 @@
 
             {{ form | crispy }}
 
+<<<<<<< HEAD
             <br>
 
             <div class="d-flex justify-content-center">
@@ -20,6 +34,36 @@
                 &nbsp;
                 <a href="{% url 'listado-trabajador'%}"> <button type="button"
                         class="btn btn-secondary">Cancelar</button></a>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+        {{ form }}
+
+        <div class="d-flex justify-content-center">
+        <button type="submit" id="btnEnviar" class="button" value="Guardar"></button>
+        <input type="reset" value="Cancelar" class="btn btn-secondary">
+             &nbsp;
+        <input type="reset" value="guardar" class="btn btn-secondary">
+=======
+=======
+>>>>>>> b4c7f56a59306ada3d29840ab6e0344640213e60
+        {{ form  | crispy }}
+
+        <br>
+
+        <div class="d-flex justify-content-center">
+            <button type="submit" id="btnEnviar" class="btn btn-primary"> Guardar</button>
+             &nbsp;
+            <a href="{% url 'listado-trabajador'%}"> <button type="button" class="btn btn-secondary">Cancelar</button></a>
+<<<<<<< HEAD
+>>>>>>> b4c7f56a59306ada3d29840ab6e0344640213e60
+=======
+>>>>>>> b4c7f56a59306ada3d29840ab6e0344640213e60
+
+        </div>
+    </form>
+    {{mensaje}}
+>>>>>>> c2467bd2fb3390f2cdb7a21c6ce31119e565f24b
 
             </div>
         </form>
