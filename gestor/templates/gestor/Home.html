@@ -11,9 +11,13 @@
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="Imagenes/iluminati.png">
-    
     {% load static %}
+    {% block css %}
+    {% endblock %}
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+ 
+
+ 
 
     <title>Gestión WEB</title>
 </head>
@@ -91,7 +95,7 @@
                 </ul>
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" href="Listado_trabajadores.html">Usuarios</a></li>
+                    <li><a class="dropdown-item" href="">Usuarios</a></li>
                     <li><a class="dropdown-item" href="#">Perfil</a></li>
                 </ul>
 
@@ -101,7 +105,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li><a class="dropdown-item" href="#">Centros de trabajo</a></li>
-                    <li><a class="dropdown-item" href="Listado_trabajadores.html">Trabajadores</a></li>
+                    <li><a class="dropdown-item" href="{% url 'listado-trabajador'%}">Trabajadores</a></li>
                 </ul>
                 </a>
 
