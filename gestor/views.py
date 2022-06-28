@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render, get_object_or_404
 from .serializers import ProfSerializer
 from rest_framework import viewsets
 from .models import Profesion, Trabajadores
@@ -52,3 +52,31 @@ def form_trab(request):
         else:
             data["form"] = formulario
     return render(request, 'gestor/form_trab.html', data)
+
+
+def editar_trab(request, id):
+    trabajadores= get_object_or_404(Trabajadores, id=id)
+
+    data = {
+        'form': TrabajadorForm(instance=trabajadores)
+    }
+    
+    if request.method == 'POST':
+        formulario = TrabajadorForm (data=request.POST, instance=trabajadores)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"]="Registro de trabajador editado con exito"
+            return redirect(to="listado-trabajador")
+        data["form"] = formulario
+  
+
+    return render (request, 'gestor/editartrab.html', data)
+
+
+def eliminar_trab(request, id):
+    trabajadores = get_object_or_404(Trabajadores, id=id)
+    trabajadores.delete()
+
+    return redirect(to="listado-trabajador")
+
+

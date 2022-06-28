@@ -27,19 +27,19 @@
             <th scope="col">Acciones</th>
         </tr>
     </thead>
-    {% for Trabajadores in listado %}
     <tbody>
+        {% for Trabajadores in listado %}
         <tr>
             <th>{{Trabajadores.rut}}</th>
             <td>{{Trabajadores.nombre}} </td>
             <th>{{Trabajadores.apellido}}</th>
             <td>{{Trabajadores.email}}</td>
-            <td><a class="but" href="Dashboard.html">Editar</a></td>
+            <td><a href="{% url 'editar_trabajador' Trabajadores.id %}" class="btn btn-sm btn-block btn-info">Editar</a></td>
+            <td><a href="{% url 'eliminar_trabajador' Trabajadores.id %}" class="btn btn-sm btn-block btn-danger">Eliminar</a></td>
+            </td>
         </tr>
+        {% endfor %}
     </tbody>
-
-    {% endfor %}
-
 </table>
 
 <footer>
