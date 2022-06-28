@@ -7,7 +7,8 @@ from . views import agregar_trabajador, home
 urlpatterns = [
     #path ('', views.list_trab, name='list_trab'),
     path ('', home, name='home'),
-    path ('agregar-trabajador/', agregar_trabajador, name='agregar_trabajador'),
     path ('listado-trabajador/', views.list_trab, name='listado-trabajador'),
+    path ('agregar-trabajador/', agregar_trabajador, name='agregar_trabajador'),
+
 
 ]
