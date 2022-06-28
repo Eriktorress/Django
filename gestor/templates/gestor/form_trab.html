@@ -1,46 +1,39 @@
-
 {% extends 'gestor/home.html'%}
 {% load static %}
 {% block content %}
 {% load crispy_forms_tags %}
-
-
+<br>
 <div class="row">
-    <div class="col-12 col-md-6 offset-md-5">
+    <div class="col-12 col-md-6 offset-md-6">
+        <h2>Formulario de Trabajadores</h2>
+        <hr>
+        <form action="" classs="formulario_trabajador " method="post">
 
-        <div class="card">
-            <div class="card-body">
-                <h2>Formulario de Trabajadores</h2>
-        
-    <form action="" classs="formulario_trabajador "method="post">
+            {% csrf_token %}
 
-        {% csrf_token %}
+            {{ form | crispy }}
 
-        {{ form  | crispy }}
+            <br>
 
-        <br>
-
-        <div class="d-flex justify-content-center">
-            <button type="submit" id="btnEnviar" class="btn btn-primary"> Guardar</button>
-             &nbsp;
-            <a href="{% url 'listado-trabajador'%}"> <button type="button" class="btn btn-secondary">Cancelar</button></a>
-
-        </div>
-    </form>
-    {{mensaje}}
+            <div class="d-flex justify-content-center">
+                <button type="submit" id="btnEnviar" class="btn btn-primary"> Guardar</button>
+                &nbsp;
+                <a href="{% url 'listado-trabajador'%}"> <button type="button"
+                        class="btn btn-secondary">Cancelar</button></a>
 
             </div>
+        </form>
+        {{mensaje}}
 
-        </div>
+    </div>
+
+</div>
 
 
-    </div> 
+</div>
 
 
 
 </div>
 
 {% endblock %}
-
-
-
