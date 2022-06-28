@@ -16,20 +16,20 @@ def home(request):  #PAGINA 1
     return render(request, 'gestor/home.html')
 
 def Inicio_sesion(request):  #PAGINA 2
-    return render(request,'Inicio_sesion.html')
+    return render(request,'gestor/Inicio_sesion.html')
 
 def Dashboard(request):  #PAGINA 3
-    return render(request,'Dashboard.html') 
+    return render(request,'gestor/Dashboard.html') 
 
 
 # PAGINAS CON METODOS DINAMICOS
 
 #USUARIOS
 def Listado_usuarios (request):
-    return render (request,'Listado_usuarios.html')
+    return render (request,'gestor/Listado_usuarios.html')
 
 def Formulario_Usuario (request):
-    return render(request,'Formulario_Usuario.html')
+    return render(request,'gestor/Formulario_Usuario.html')
 
 
 #TRABAJADORES
