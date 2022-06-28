@@ -3,7 +3,6 @@
 {% load static %}
 {% block content %}
 
-{% load crispy_forms_tags %}
 
 <div class="row">
     <div class="col-12 col-md-6 offset-md-3">
@@ -12,18 +11,21 @@
             <div class="card-body">
                 <h2>Formulario de Trabajadores</h2>
         
-    <form action="" method="post">
+    <form action="" classs="formulario_trabajador "method="post">
 
-        {% csrt_token %}
-        {{ form | crispy }}
+        {% csrf_token %}
+
+        {{ form }}
 
         <div class="d-flex justify-content-center">
-            <input type="reset" value="Cancelar" class="btn btn-secondary">
+        <button type="submit" id="btnEnviar" class="button" value="Guardar"></button>
+        <input type="reset" value="Cancelar" class="btn btn-secondary">
              &nbsp;
-            <input type="reset" value="guardar" class="btn btn-secondary">
+        <input type="reset" value="guardar" class="btn btn-secondary">
 
         </div>
     </form>
+    {{mensaje}}
 
             </div>
 

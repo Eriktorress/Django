@@ -37,10 +37,18 @@ def list_trab(request):
     listado = Trabajadores.objects.all();
     return render(request, 'gestor/list_trab.html', {'listado':listado})
 
-def agregar_trabajador(request):
+def form_trab(request):
 
     data = {
         'form': TrabajadorForm()
 
     }
-    return render(request, 'gestor/agregar.html', data)
+
+    if request.method == 'POST':
+        formulario = TrabajadorForm (data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"]="Registro de trabajador guardado con exito"
+        else:
+            data["form"] = formulario
+    return render(request, 'gestor/form_trab.html', data)
