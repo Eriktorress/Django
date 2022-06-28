@@ -10,5 +10,5 @@ router.register(r'Profesion', views.Profview,'Profesion')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('gestor.urls'))
+    path('',include('gestor.urls')),
 ]
