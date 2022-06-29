@@ -32,11 +32,13 @@ def Formulario_Usuario (request):
     return render(request,'gestor/Formulario_Usuario.html')
 
 
-#TRABAJADORES
+#--------TRABAJADORES-------------------------------------------------
+#Listado de trabajadores
 def list_trab(request):
     listado = Trabajadores.objects.all();
-    return render(request, 'gestor/list_trab.html', {'listado':listado})
+    return render(request, 'gestor/Trabajador/list_trab.html', {'listado':listado})
 
+#Formulario de trabajador
 def form_trab(request):
 
     data = {
@@ -51,9 +53,9 @@ def form_trab(request):
             data["mensaje"]="Registro de trabajador guardado con exito"
         else:
             data["form"] = formulario
-    return render(request, 'gestor/form_trab.html', data)
+    return render(request, 'gestor/Trabajador/form_trab.html', data)
 
-
+#Editar trabajador
 def editar_trab(request, id):
     trabajadores= get_object_or_404(Trabajadores, id=id)
 
@@ -70,9 +72,9 @@ def editar_trab(request, id):
         data["form"] = formulario
   
 
-    return render (request, 'gestor/editartrab.html', data)
+    return render (request, 'gestor/Trabajador/edit_trab.html', data)
 
-
+#Eliminar trabajador
 def eliminar_trab(request, id):
     trabajadores = get_object_or_404(Trabajadores, id=id)
     trabajadores.delete()
@@ -80,13 +82,14 @@ def eliminar_trab(request, id):
     return redirect(to="listado-trabajador")
 
 
-#CENTROS DE TRABAJO
+#--------CENTRO DE TRABAJO -----------------------------------------------
 
+#Listar centros de trabajos
 def list_centro(request):
     listado = Centros.objects.all();
     return render(request, 'gestor/list_centr.html', {'listado':listado})
 
-
+#Formulario centro de trabajo
 def form_centr(request):
 
     data = {
@@ -101,7 +104,6 @@ def form_centr(request):
             data["mensaje"]="Registro de trabajador guardado con exito"
         else:
             data["form"] = formulario2
-<<<<<<< HEAD
     return render(request, 'gestor/form_cent.html', data)
 
 #Editar centro de trabajo
@@ -130,6 +132,3 @@ def eliminar_centr(request, id):
     centros.delete()
 
     return redirect(to="list_centr")
-=======
-    return render(request, 'gestor/form_cent.html', data)
->>>>>>> 0efc8943bb513390b78bbe3890fe9074943110ee
