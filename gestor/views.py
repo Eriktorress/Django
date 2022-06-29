@@ -79,6 +79,9 @@ def eliminar_trab(request, id):
 
     return redirect(to="listado-trabajador")
 
+
+#CENTROS DE TRABAJO
+
 def list_centro(request):
     listado = Centros.objects.all();
     return render(request, 'gestor/list_centr.html', {'listado':listado})
@@ -92,10 +95,10 @@ def form_centr(request):
     }
 
     if request.method == 'POST':
-        formulario = CentroForm (data=request.POST)
-        if formulario.is_valid():
-            formulario.save()
+        formulario2 = CentroForm (data=request.POST)
+        if formulario2.is_valid():
+            formulario2.save()
             data["mensaje"]="Registro de trabajador guardado con exito"
         else:
-            data["form"] = formulario
+            data["form"] = formulario2
     return render(request, 'gestor/form_cent.html', data)
