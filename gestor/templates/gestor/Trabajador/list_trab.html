@@ -34,7 +34,7 @@
             <td>{{Trabajadores.nombre}} </td>
             <th>{{Trabajadores.apellido}}</th>
             <td>{{Trabajadores.email}}</td>
-            <td><a href="{% url 'editar_trabajador' Trabajadores.id %}" class="btn btn-sm btn-block btn-info">Editar</a></td>
+            <td><a href="{% url 'edit_trab' Trabajadores.id %}" class="btn btn-sm btn-block btn-info">Editar</a></td>
             <td><a href="{% url 'eliminar_trabajador' Trabajadores.id %}" class="btn btn-sm btn-block btn-danger">Eliminar</a></td>
             </td>
         </tr>
