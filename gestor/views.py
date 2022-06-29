@@ -125,6 +125,8 @@ def editar_cent(request, id):
     
     return render (request, 'gestor/editar_centro.html', data)
 
+#Editar eliminar centro
+
 def eliminar_centr(request, id):
     centros = get_object_or_404(Centros, id=id)
     centros.delete()
