@@ -1,13 +1,39 @@
 {% extends 'gestor/home.html'%}
 
-{% block content %}
 
+{% block js %}
+
+<script>
+    function eliminarCentros(id) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/elim_centr/"+id+"/"
+                
+            }
+        })
+
+    }
+
+</script>
+
+{% endblock %}
+
+
+{% block content %}
 
 <h1>Listado de Centros</h1>
 
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
     <a href="{% url 'form_centr'%}"> <button type="button" class="btn btn-dark">+ Nuevo
-           Centro </button></a>
+            Centro </button></a>
 </div>
 <hr>
 <section class="webdesigntuts-workshop">
@@ -37,10 +63,12 @@
             <td>{{Centros.region}}</td>
             <td>{{Centros.telefono}}</td>
             <td><a href="{% url 'edit_centr' Centros.id %}" class="btn btn-sm btn-block btn-info">Editar</a></td>
-            <td><a href="{% url 'elim_centr' Centros.id %}" class="btn btn-sm btn-block btn-danger">Eliminar</a></td>
+            <td><a href="#" onclick="eliminarCentros({{ Centros.id }})"
+                    class="btn btn-sm btn-block btn-danger">Eliminar</a></td>
             </td>
         </tr>
         {% endfor %}
+
     </tbody>
 </table>
 
