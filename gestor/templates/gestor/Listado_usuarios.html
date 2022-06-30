@@ -15,7 +15,9 @@
        <!-- Fuente Roboto tamaño 300-400 y 700-->
        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
        <link rel="icon" type="image/x-icon" href="Imagenes/iluminati.png">
-       <link href="CSS/Listado_usuarios.css"rel="stylesheet" >
+       {% load static%}
+       <link rel="stylesheet" href="{% static 'css/Listado_usuarios.css' %}" >
+
        <title>Registro de Usuarios</title>
 
        <h1>Listado de Usuarios</h1>
