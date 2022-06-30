@@ -109,9 +109,29 @@
 
         </div>
 
-         <div style="border: 1px solid rgb(104, 10, 10); width: 80%;">
-            {% block content %}
+        <div style="border: 1px solid rgb(104, 10, 10); width: 80%;">
+            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+            {% if messages %}
+            {% for m in messages %}
+            <script>
+                Swal.fire({
+                    "title": "Felicidataciones",
+                    "text": "{{m}}",
+                    "icon": "success"
+
+                })
+            </script>
+
+            {% end for %}
+
+            {% endif %}
+
+            {% if messages %}
+
+
+            {% block content %}
+            {% block js %}
             {% endblock %}
         </div>
 </body>

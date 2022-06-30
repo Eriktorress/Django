@@ -3,7 +3,7 @@ from .serializers import ProfSerializer
 from rest_framework import viewsets
 from .models import Centros, Profesion, Trabajadores
 from .forms import TrabajadorForm, CentroForm
-
+from django.contrib import messages
 
 # Create your views here.
 class Profview(viewsets.ModelViewSet):
@@ -67,7 +67,7 @@ def editar_trab(request, id):
         formulario = TrabajadorForm (data=request.POST, instance=trabajadores)
         if formulario.is_valid():
             formulario.save()
-            data["mensaje"]="Registro de trabajador editado con exito"
+            messages.success(request, "Modificado correctamente")
             return redirect(to="listado-trabajador")
         data["form"] = formulario
   
