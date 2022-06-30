@@ -118,7 +118,7 @@ def editar_cent(request, id):
         formulario2 = CentroForm (data=request.POST, instance=centros)
         if formulario2.is_valid():
             formulario2.save()
-            data["mensaje"]="Registro de trabajador editado con exito"
+            messages.success(request, "Modificado correctamente")
             return redirect(to="list_centr")
         data["form"] = formulario2
 
