@@ -130,5 +130,5 @@ def editar_cent(request, id):
 def eliminar_centr(request, id):
     centros = get_object_or_404(Centros, id=id)
     centros.delete()
-
+    messages.success(request, "Eliminado correctamente")
     return redirect(to="list_centr")
