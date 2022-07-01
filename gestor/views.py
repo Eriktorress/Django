@@ -5,12 +5,12 @@ from .models import Centros, Profesion, Trabajadores, Usuarios
 from .forms import TrabajadorForm, CentroForm, UsuarioForm
 from django.contrib import messages
 
-# Create your views here.
+
 class Profview(viewsets.ModelViewSet):
     serializer_class = ProfSerializer
     Queryset = Profesion.objects.all()
 
-# PAGINAS CON LO INICIAL 
+#---- Paginas con lo inicial -------- 
 
 def home(request):  #PAGINA 1
     return render(request, 'gestor/home.html')
@@ -21,8 +21,7 @@ def Inicio_sesion(request):  #PAGINA 2
 def Dashboard(request):  #PAGINA 3
     return render(request,'gestor/Dashboard.html') 
 
-
-# PAGINAS CON METODOS DINAMICOS
+#--- Vistas ---
 
 #-------- Usuarios -----------------------------------------------
 #Listar usuarios
@@ -43,7 +42,8 @@ def form_usuario(request):
         formulario3 = UsuarioForm (data=request.POST)
         if formulario3.is_valid():
             formulario3.save()
-            data["mensaje"]="Registro de usuario guardado con exito"
+            messages.success(request, "Registro agregado correctamente")
+            return redirect(to="list_usua")
         else:
             data["form"] = formulario3
     return render(request, 'gestor/Usuarios/form_usuario.html', data)
@@ -75,7 +75,8 @@ def form_trab(request):
         formulario = TrabajadorForm (data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            data["mensaje"]="Registro de trabajador guardado con exito"
+            messages.success(request, "Registro agregado correctamente")
+            return redirect(to="listado-trabajador")
         else:
             data["form"] = formulario
     return render(request, 'gestor/Trabajador/form_trab.html', data)
@@ -125,7 +126,8 @@ def form_centr(request):
         formulario2 = CentroForm (data=request.POST)
         if formulario2.is_valid():
             formulario2.save()
-            data["mensaje"]="Registro de trabajador guardado con exito"
+            messages.success(request, "Registro agregado correctamente")
+            return redirect(to="list_centr")
         else:
             data["form"] = formulario2
     return render(request, 'gestor/Centros/form_cent.html', data)
