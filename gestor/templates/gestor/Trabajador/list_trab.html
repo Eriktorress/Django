@@ -1,5 +1,33 @@
 {% extends 'gestor/home.html'%}
 
+{% block js %}
+
+<script>
+    function eliminarTrabajador(id) {
+        Swal.fire({
+            title: '¿Estas seguro?',
+            text: "Esta acción no se puede deshacer!",
+            icon: 'warning',
+            showCancelButton: true,
+            cancelButtontext: '',
+            confirmButtonText: 'Si, Eliminar!',
+            confirmButtonColor:  '#d33',
+            cancelButtonColor:'#3085d6',
+        })
+        .then(function(result) {
+            if (result.isConfirmed) {
+                window.location.href = "/Eliminar_trabajador/"+id+"/"
+            }
+        })
+
+    }
+
+</script>
+
+{% endblock %}
+
+
+
 {% block content %}
 
 
@@ -35,7 +63,7 @@
             <th>{{Trabajadores.apellido}}</th>
             <td>{{Trabajadores.email}}</td>
             <td><a href="{% url 'edit_trab' Trabajadores.id %}" class="btn btn-sm btn-block btn-info">Editar</a></td>
-            <td><a href="{% url 'eliminar_trabajador' Trabajadores.id %}" class="btn btn-sm btn-block btn-danger">Eliminar</a></td>
+            <td><a href="#" onclick="eliminarTrabajador({{ Trabajadores.id }})" class="btn btn-sm btn-block btn-danger">Eliminar</a></td>
             </td>
         </tr>
         {% endfor %}

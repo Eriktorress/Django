@@ -78,7 +78,7 @@ def editar_trab(request, id):
 def eliminar_trab(request, id):
     trabajadores = get_object_or_404(Trabajadores, id=id)
     trabajadores.delete()
-
+    messages.success(request, "Eliminado correctamente")
     return redirect(to="listado-trabajador")
 
 
