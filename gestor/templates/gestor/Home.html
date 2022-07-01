@@ -56,10 +56,10 @@
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-footer">\Listado_usuarios.html
+                                        <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">seguir navegando</button>
-                                            <button type="button" class="btn btn-danger">Cerrar sesión</button>
+                                                data-bs-dismiss="modal">Seguir navegando</button>
+                                            <a href="{% url 'Inicio_sesion'%}" <button type="button" class="btn btn-danger" >Cerrar sesión</button></a>
                                         </div>
                                     </div>
                                 </div>
@@ -86,7 +86,7 @@
                     Configuración
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" href="Listado_usuarios.html">Usuarios</a></li>
+                    <li><a class="dropdown-item" href="{% url 'Listado_usuarios'%}">Usuarios</a></li>
                     <li><a class="dropdown-item" href="#">Perfiles</a></li>
                 </ul>
 
