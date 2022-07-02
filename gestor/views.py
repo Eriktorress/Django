@@ -6,10 +6,12 @@ from .forms import TrabajadorForm, CentroForm, UsuarioForm
 from django.contrib import messages
 
 
+
+ #---- Serializador ------
 class Profview(viewsets.ModelViewSet):
     serializer_class = ProfSerializer
-    Queryset = Profesion.objects.all()
-
+    queryset = Profesion.objects.all()
+    
 #---- Paginas con lo inicial -------- 
 
 def home(request):  #PAGINA 1
@@ -29,7 +31,6 @@ def list_usuarios(request):
     listado = Usuarios.objects.all();
     return render(request, 'gestor/Usuarios/list_usuario.html', {'listado':listado})
 
-
 #Formulario de usuario
 def form_usuario(request):
 
@@ -47,7 +48,6 @@ def form_usuario(request):
         else:
             data["form"] = formulario3
     return render(request, 'gestor/Usuarios/form_usuario.html', data)
-
 
 #Eliminar usuario
 def eliminar_usuario(request, id):
@@ -108,7 +108,7 @@ def eliminar_trab(request, id):
     return redirect(to="listado-trabajador")
 
 
-#--------CENTRO DE TRABAJO -----------------------------------------------
+#------- Centros de trabajos -----------------------------------------------
 #Listar centros de trabajos
 def list_centro(request):
     listado = Centros.objects.all();
