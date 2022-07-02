@@ -3,6 +3,6 @@ from .models import Profesion
 
 
 class ProfSerializer(serializers.ModelSerializer):
-    class meta:
+    class Meta:
         model= Profesion
-        field = '__all__'
+        fields = '__all__'

@@ -9,8 +9,9 @@ from django.contrib import messages
 
  #---- Serializador ------
 class Profview(viewsets.ModelViewSet):
-    serializer_class = ProfSerializer
     queryset = Profesion.objects.all()
+    serializer_class = ProfSerializer
+    
     
 #---- Paginas con lo inicial -------- 
 

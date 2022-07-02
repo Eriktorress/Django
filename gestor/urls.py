@@ -1,17 +1,20 @@
-from re import A
-from django.db import router
-from django.urls import path
+from django.urls import path, include
 
-from gestor.models import Profesion
 from .views import editar_trab,form_trab,home,Inicio_sesion,Dashboard,\
     list_trab,form_usuario,eliminar_trab, list_centro, form_centr,\
     editar_cent,eliminar_centr,list_usuarios,eliminar_usuario,Profview
 from rest_framework import routers
 
 
+
+router = routers.DefaultRouter()
+router.register('profesion', Profview)
+
+
 urlpatterns = [
 
-
+    #-------- API ---------
+    path('api/',include(router.urls)),
     #-------- Inicial ---------
     path ('', home, name='home'),
     path ('Inicio_sesion/', Inicio_sesion, name='Inicio_sesion'),

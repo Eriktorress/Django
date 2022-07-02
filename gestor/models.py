@@ -6,12 +6,20 @@ from django.db import models
 from django.urls import register_converter
 
 
+
 # Create your models here.
+
+class Profesion (models.Model):
+    nombre_prof = models.CharField (verbose_name='Nombre Profesión', max_length=100)
+
+    def __str__(self) :
+        return f"{self.id} - {self.nombre_prof}"
 class Trabajadores(models.Model):
     nombre = models.CharField (verbose_name='Nombre', max_length=100)
     apellido = models.CharField (verbose_name='Apellido', max_length=100)
     rut = models.CharField (verbose_name='Rut', max_length=10)
     email = models.EmailField ()
+    profes = models.ForeignKey(Profesion, on_delete=models.PROTECT)
 
     def __str__(self) :
         return f"{self.rut} - {self.nombre} {self.apellido}"
@@ -24,11 +32,7 @@ class Usuarios(models.Model):
     def __str__(self) :
         return f"{self.nombre_com} - {self.apelllidos_usu} {self.email}"
 
-class Profesion (models.Model):
-    nombre_prof = models.CharField (verbose_name='Nombre Profesión', max_length=100)
 
-    def __str__(self) :
-        return f"{self.id} - {self.nombre_prof}"
 
 class Tipo_centro (models.Model):
     nom_tip_centr = models.CharField(max_length=50)
