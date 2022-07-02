@@ -63,8 +63,8 @@
             <th>{{Centros.comuna}}</th>
             <td>{{Centros.region}}</td>
             <td>{{Centros.telefono}}</td>
-            <td><a href="{% url 'edit_centr' Centros.id %}" class="btn btn-sm btn-block btn-info">Editar</a></td>
-            <td><a href="#" onclick="eliminarCentros({{ Centros.id }})"
+            <td><a href="{% url 'edit_centr' Centros.id %}" class="btn btn-sm btn-block btn-info">Editar</a>
+            <a href="#" onclick="eliminarCentros({{ Centros.id }})"
                     class="btn btn-sm btn-block btn-danger">Eliminar</a></td>
             </td>
         </tr>

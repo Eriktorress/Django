@@ -50,6 +50,25 @@ def form_usuario(request):
             data["form"] = formulario3
     return render(request, 'gestor/Usuarios/form_usuario.html', data)
 
+#Editar usuario
+def editar_usuario(request, id):
+    usuario= get_object_or_404(Usuarios, id=id)
+
+    data = {
+        'form': UsuarioForm(instance=usuario)
+    }
+    
+    if request.method == 'POST':
+        formulario = UsuarioForm (data=request.POST, instance=usuario)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request, "Modificado correctamente")
+            return redirect(to="list_usua")
+        data["form"] = formulario
+  
+
+    return render (request, 'gestor/Usuarios/edit_usuario.html', data)
+
 #Eliminar usuario
 def eliminar_usuario(request, id):
     usuarios = get_object_or_404(Usuarios, id=id)
