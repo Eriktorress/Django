@@ -1,3 +1,5 @@
+from asyncio.windows_events import NULL
+from decimal import DefaultContext
 import email
 from pyexpat import model
 from tkinter import N
@@ -13,13 +15,13 @@ class Profesion (models.Model):
     nombre_prof = models.CharField (verbose_name='Nombre Profesión', max_length=100)
 
     def __str__(self) :
-        return f"{self.id} - {self.nombre_prof}"
+        return f"{self.nombre_prof}"
 class Trabajadores(models.Model):
     nombre = models.CharField (verbose_name='Nombre', max_length=100)
     apellido = models.CharField (verbose_name='Apellido', max_length=100)
     rut = models.CharField (verbose_name='Rut', max_length=10)
     email = models.EmailField ()
-    profes = models.ForeignKey(Profesion, on_delete=models.PROTECT)
+    profesion = models.ForeignKey(Profesion, on_delete=models.PROTECT, null=True)
 
     def __str__(self) :
         return f"{self.rut} - {self.nombre} {self.apellido}"
