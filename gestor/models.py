@@ -5,6 +5,7 @@ from unicodedata import name
 from django.db import models
 from django.urls import register_converter
 
+
 # Create your models here.
 class Trabajadores(models.Model):
     nombre = models.CharField (verbose_name='Nombre', max_length=100)
@@ -24,7 +25,6 @@ class Usuarios(models.Model):
         return f"{self.nombre_com} - {self.apelllidos_usu} {self.email}"
 
 class Profesion (models.Model):
-    idprof = models.CharField (verbose_name='Id', max_length=100)
     nombre_prof = models.CharField (verbose_name='Nombre Profesión', max_length=100)
 
     def __str__(self) :
@@ -40,6 +40,7 @@ class Comunas (models.Model):
     nombre_comu = models.CharField(max_length=50)
 
     def __str__(self) :
+
         return self.nombre_comu
     
 class Regiones (models.Model):
