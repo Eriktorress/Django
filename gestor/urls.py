@@ -1,6 +1,6 @@
 from re import A
 from django.urls import path
-from .views import editar_trab, form_trab,home,Inicio_sesion,Dashboard,list_trab,Listado_usuarios,Formulario_Usuario,eliminar_trab, list_centro, form_centr,editar_cent,eliminar_centr
+from .views import editar_trab,form_trab,home,Inicio_sesion,Dashboard,list_trab,form_usuario,eliminar_trab, list_centro, form_centr,editar_cent,eliminar_centr,list_usuarios,eliminar_usuario
 
 
 urlpatterns = [
@@ -10,8 +10,9 @@ urlpatterns = [
     path ('Inicio_sesion/', Inicio_sesion, name='Inicio_sesion'),
     path ('Dashboard/', Dashboard, name='Dashboard'),
     #----------USUARIO----------
-    path ('Listado_usuarios/', Listado_usuarios, name='Listado_usuarios'),
-    path ('Formulario_Usuario/', Formulario_Usuario, name='Formulario_Usuario'),
+    path ('Listado_usuarios/', list_usuarios, name='list_usua'),
+    path ('Formulario_Usuario/', form_usuario, name='form_Usuario'),
+    path ('Eliminar_usuario/<id>/', eliminar_usuario, name='elim_usuario'),
     #----------TRABAJADOR--------
     path ('Formulario_trabajador/', form_trab, name='form_trab'),
     path ('Listado-trabajador/', list_trab, name='listado-trabajador'),

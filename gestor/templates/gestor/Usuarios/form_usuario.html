@@ -1,0 +1,36 @@
+{% extends 'gestor/home.html'%}
+{% load static %}
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<br>
+
+<div class="row">
+    <div class="col-12 col-md-6 offset-md-6">
+        <h2>Formulario de Usuarios</h2>
+        <hr>
+        <form action="" classs="formulario_usuario " method="post">
+
+            {% csrf_token %}
+
+            {{ form | crispy }}
+
+            <br>
+
+            <div class="d-flex justify-content-center">
+                <a href="{% url 'list_usua'%}"> <button type="button"
+                    class="btn btn-secondary">Cancelar</button></a>
+                &nbsp;
+                <button type="submit" id="btnEnviar" class="btn btn-primary"> Guardar</button>
+            </div>
+        </form>
+
+        {{mensaje}}
+
+    </div>
+
+</div>
+
+
+{% endblock %}
