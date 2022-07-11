@@ -45,6 +45,9 @@
                     <!--Formulario de registro -->
                     <form action="" class="formulario__register">
                         <h2>Regístrarse</h2>
+
+                        {% csrf_token %}
+                        {{ form }}
                         <input type="username" placeholder="Nombre completo">
                         <input type="email" placeholder="Correo Electronico">
                         <input type="password1" placeholder="Usuario">
