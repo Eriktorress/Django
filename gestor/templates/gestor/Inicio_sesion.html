@@ -16,7 +16,7 @@
 <body>
 
         <main>
-
+            <!--Contenedor de la caja trasera-->
             <div class="contenedor__todo">
                 <div class="caja__trasera">
                     <div class="caja__trasera-login">
@@ -31,18 +31,18 @@
                     </div>
                 </div>
 
-                <!--Formulario de Login y registro-->
+                <!--Formulario de Login -->
                 <div class="contenedor__login-register">
                     <!--Login-->
                     <form action="" class="formulario__login">
                         <h2>Iniciar Sesión</h2>
                         <input type="text" placeholder="Correo Electronico">
                         <input type="password" placeholder="Contraseña">
-                        <a href="{% url 'Dashboard'%}"><button type="button" class="btn btn-primary width-100">Entrar </button></a>
+                        <button type="button" class="btn btn-primary width-100">Entrar </button>
                     </form>
 
-                    <!--Register-->
-                    {% for Usuario in Usuario %}
+
+                    <!--Formulario de registro -->
                     <form action="" class="formulario__register">
                         <h2>Regístrarse</h2>
                         <input type="username" placeholder="Nombre completo">
@@ -52,10 +52,10 @@
                         <button>Regístrarse</button>
                     </form>
                 </div>
-                {% endfor %}
+               
             </div>
             
         </main>
-
+        <script src="static/JS/Inicio.js"></script>
 </body>
 </html>
