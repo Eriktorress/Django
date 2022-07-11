@@ -2,8 +2,9 @@ from django.shortcuts import redirect, render, get_object_or_404
 from .serializers import ProfSerializer
 from rest_framework import viewsets
 from .models import Centros, Profesion, Trabajadores, Usuarios
-from .forms import TrabajadorForm, CentroForm, UsuarioForm
+from .forms import CustomUserCreationForm, TrabajadorForm, CentroForm, UsuarioForm
 from django.contrib import messages
+from django.contrib.auth import authenticate, login
 
 
 
@@ -181,3 +182,24 @@ def eliminar_centr(request, id):
 
 
 
+
+#Prueba registro de usuarios:
+
+def registro_usuario(request):
+
+    data = {
+        'form': CustomUserCreationForm()
+
+    }
+
+    if request.method == 'POST':
+        formulario4 = CustomUserCreationForm (data=request.POST)
+        if formulario4.is_valid():
+            formulario4.save()
+            user = authenticate(username = formulario4.cleaned_data["username"], password= formulario4.cleaned_data["pasword1"])
+            login(request, user)
+            messages.success(request, "Registro agregado correctamente")
+            return redirect(to="home")
+        data["form"] = formulario4
+
+    return render(request, 'registration/login.html', data)

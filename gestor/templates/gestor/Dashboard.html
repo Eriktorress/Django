@@ -12,6 +12,7 @@ crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"
 integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc=" crossorigin="anonymous"></script>
 {% endblock %}
+{% if user.is_authenticated %}
 <div class="w-100">
 
     <div id="content">
@@ -20,7 +21,7 @@ integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc=" crossorigin="ano
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9">
-                        <h1 class="font-weight-bold mb-0">Bienvenido Usuarios</h1>
+                        <h1 class="font-weight-bold mb-0"> Bienvenido {{ user.username}}</h1>
                         <p class="lead text-muted"> Revisa la última información</p>
                         <!-- Botón descargar reporte-->
                     </div>
@@ -190,4 +191,5 @@ integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc=" crossorigin="ano
 </body>
 
 </html>
+{% endif %}
 {% endblock %}
