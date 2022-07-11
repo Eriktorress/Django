@@ -40,9 +40,7 @@
                                 {% if user.is_authenticated %}
 
                                 <img src="{% static 'css/Imagenes/Icono.jpg' %}"
-                                    class="img-fluid rounded-circle avatar mr-2"> {{ user.username}}</a> 
-                            
-
+                                    class="img-fluid rounded-circle avatar mr-2"> {{ user.username}}</a>                       
 
                                 {% endif %}
 
@@ -50,7 +48,7 @@
                                 <a class="dropdown-item" href="#">Perfil</a>
                                 <div class="dropdown-divider"></div>
                                 <li><button class="dropdown-item" type="button" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">cerrar sesión</button></li>
+                                        data-bs-target="#exampleModal">Cerrar sesión</button></li>
                             </ul>
                             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
