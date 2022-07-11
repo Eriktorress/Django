@@ -18,7 +18,7 @@ urlpatterns = [
     #-------- Inicial ---------
     path ('', home, name='home'),
     #path ('Inicio_sesion/', Inicio_sesion, name='Inicio_sesion'),
-    path ('registro_usuario/',registro_usuario, name= 'registro'),
+    path ('registro_usuario/', registro_usuario, name= 'registro'),
 
     path ('Dashboard/', Dashboard, name='Dashboard'),
     #-------- Usuarios --------
