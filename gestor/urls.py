@@ -17,7 +17,7 @@ urlpatterns = [
     path('api/',include(router.urls)),
     #-------- Inicial ---------
     path ('', home, name='home'),
-    path ('Inicio_sesion/', Inicio_sesion, name='Inicio_sesion'),
+    #path ('Inicio_sesion/', Inicio_sesion, name='Inicio_sesion'),
     path ('Dashboard/', Dashboard, name='Dashboard'),
     #-------- Usuarios --------
     path ('Listado_usuarios/', list_usuarios, name='list_usua'),
@@ -34,4 +34,5 @@ urlpatterns = [
     path ('Formulario_centro/', form_centr, name='form_centr'),
     path ('Editar_centro/<id>/', editar_cent, name='edit_centr'),
     path ('Eliminar_centro/<id>/', eliminar_centr, name='elim_centr'),
+
 ]

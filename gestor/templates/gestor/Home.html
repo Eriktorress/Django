@@ -2,6 +2,7 @@
 <html>
 <html lang="en">
 {% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,8 +37,15 @@
                         <li class="nav-item dropdown ">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="{% static 'css/Imagenes/Icono.jpg' %}" class="img-fluid rounded-circle avatar mr-2">
-                                Erik Torres</a>
+                                {% if user.is_authenticated %}
+
+                                <img src="{% static 'css/Imagenes/Icono.jpg' %}"
+                                    class="img-fluid rounded-circle avatar mr-2"> {{ user.username}}</a> 
+                            
+
+
+                                {% endif %}
+
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">Perfil</a>
                                 <div class="dropdown-divider"></div>
@@ -59,7 +67,8 @@
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-bs-dismiss="modal">Seguir navegando</button>
-                                            <a href="{% url 'Inicio_sesion'%}" <button type="button" class="btn btn-danger" >Cerrar sesión</button></a>
+                                            <a href="{% url 'login'%}" <button type="button"
+                                                class="btn btn-danger">Cerrar sesión</button></a>
                                         </div>
                                     </div>
                                 </div>
@@ -79,7 +88,7 @@
             </div>
 
             <div class="menu">
-                <a href="{% url 'Dashboard'%}"class="d-block text-light p-4"><i class="icon ion-md-apps mr-2 lead"></i>
+                <a href="{% url 'Dashboard'%}" class="d-block text-light p-4"><i class="icon ion-md-apps mr-2 lead"></i>
                     Tablero </a>
                 <a href="#" class="d-block text-light p-4" class="btn btn-secondary dropdown-toggle"
                     id="dropdownMenuButton" data-bs-toggle="dropdown"><i class="icon ion-md-construct mr-2 lead"></i>
@@ -110,8 +119,8 @@
 
             <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    {% block content %}
-    {% endblock %}
+            {% block content %}
+            {% endblock %}
 
         </div>
 </body>
@@ -124,35 +133,35 @@
     crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"
     integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc=" crossorigin="anonymous"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- MENSAJE DE CONFIRMACIÓN DE EDICIÓN DE UN FORMULARIO -->
-    {% if messages %}
-        {% for m in messages %}
+{% if messages %}
+{% for m in messages %}
 
-            <script>
-              const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                  toast.addEventListener('mouseenter', Swal.stopTimer)
-                  toast.addEventListener('mouseleave',Swal.resumeTimer)
-                }
-              })
-              Toast.fire({
-                icon: 'success',
-                title: "{{m}}"
-              })
-            </script>
+<script>
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+    Toast.fire({
+        icon: 'success',
+        title: "{{m}}"
+    })
+</script>
 
-       {% endfor %}
+{% endfor %}
 
-    {% endif %}
-    
-    {% block js %}
-    {% endblock %}
+{% endif %}
+
+{% block js %}
+{% endblock %}
 
 </html>
