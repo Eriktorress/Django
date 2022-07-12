@@ -1,8 +1,6 @@
 {% extends 'gestor/home.html'%}
 
-
 {% block js %}
-
 <script>
     function eliminarUsuarios(id) {
         Swal.fire({
@@ -22,34 +20,42 @@
         })
 
     }
-
 </script>
+{% endblock %}
 
+{%block css%}
+<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 {% endblock %}
 
 
 {% block content %}
 
-<h1>Listado de Usuarios</h1>
 
-<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <a href="{% url 'form_Usuario'%}"> <button type="button" class="btn btn-dark">+ Nuevo usuario </button></a>
-</div>
-<hr>
-<section class="webdesigntuts-workshop">
-    <form action="" method="">
-        <input type="search" placeholder="Ingrese Busqueda">
-        <button class="btn btn-secondary"> Buscar</button>
-    </form>
-</section>
-<br>
 <table style="border: 30px solid rgb(255, 255, 255);" class="table table-striped table-hover table-responsive-sm">
+    <h1 style="border: 30px solid rgb(255, 255, 255);">Listado de Usuarios</h1>
+    
     <thead class="table-dark">
+<hr>
+<div style="border-right: 30px solid rgb(255, 255, 255);" class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+    <a href="{% url 'form_Usuario'%}"> <button type="button" class="btn btn-dark"><i class="icon ion-ios-add"></i> Nuevo usuario </button></a>
+   
+</div>
+   
+        <section style="border-left: 30px solid rgb(255, 255, 255);" class="webdesigntuts-workshop">
+            
+            <form action="" method="">
+                <input type="search" placeholder="Ingrese Busqueda">
+                <button class="btn btn-secondary"><i class="icon ion-md-search"></i> Buscar</button>
+                
+            </form>
+
+        </section>
         <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellidos</th>
-            <th scope="col">email</th>
-            <th scope="col">Acciones</th>
+            <th scope="col"><i class="icon ion-ios-list-box"></i> Nombre</th>
+            <th scope="col"><i class="icon ion-ios-list-box"></i> Apellidos</th>
+            <th scope="col"><i class="icon ion-md-mail-open"></i> email</th>
+            <th scope="col"><i class="icon ion-ios-arrow-down"></i> Acciones</th>
         </tr>
     </thead>
     <tbody>
