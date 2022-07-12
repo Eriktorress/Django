@@ -186,7 +186,6 @@ def eliminar_centr(request, id):
 #Prueba registro de usuarios:
 
 def registro_usuario(request):
-
     data = {
         'form': CustomUserCreationForm()
 
@@ -196,7 +195,7 @@ def registro_usuario(request):
         formulario = CustomUserCreationForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            user = authenticate(username=formulario.cleaned_data["username"], password= formulario.cleaned_data["pasword1"])
+            user = authenticate(username=formulario.cleaned_data["username"], password= formulario.cleaned_data["password1"])
             login(request, user)
             messages.success(request, "Te has registrado correctamente")
             return redirect(to="home")

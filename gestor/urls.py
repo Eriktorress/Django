@@ -2,7 +2,8 @@ from django.urls import path, include
 
 from .views import editar_trab,form_trab,home,Dashboard,\
     list_trab,form_usuario,eliminar_trab, list_centro, form_centr,\
-    editar_cent,eliminar_centr,list_usuarios,eliminar_usuario,Profview,editar_usuario, registro_usuario
+    editar_cent,eliminar_centr,list_usuarios,eliminar_usuario,Profview,editar_usuario,\
+    registro_usuario
 from rest_framework import routers
 
 
