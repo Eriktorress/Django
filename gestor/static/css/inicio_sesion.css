@@ -86,7 +86,7 @@ main{
     width: 100%;
     max-width: 380px;
     position: relative;
-    top: -185px;
+    top: 185px;
     left: 10px;
 
     /*La transicion va despues del codigo JS*/

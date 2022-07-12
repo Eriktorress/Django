@@ -193,13 +193,13 @@ def registro_usuario(request):
     }
 
     if request.method == 'POST':
-        formulario4 = CustomUserCreationForm (data=request.POST)
-        if formulario4.is_valid():
-            formulario4.save()
-            user = authenticate(username = formulario4.cleaned_data["username"], password= formulario4.cleaned_data["pasword1"])
+        formulario = CustomUserCreationForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            user = authenticate(username=formulario.cleaned_data["username"], password= formulario.cleaned_data["pasword1"])
             login(request, user)
-            messages.success(request, "Registro agregado correctamente")
+            messages.success(request, "Te has registrado correctamente")
             return redirect(to="home")
-        data["form"] = formulario4
+        data["form"] = formulario
 
-    return render(request, 'registration/login.html', data)
+    return render(request, 'registration/registro.html', data)
