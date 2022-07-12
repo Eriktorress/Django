@@ -1,7 +1,6 @@
 {% extends 'gestor/home.html'%}
 
 {% block js %}
-
 <script>
     function eliminarTrabajador(id) {
         Swal.fire({
@@ -21,38 +20,41 @@
         })
 
     }
-
 </script>
+{% endblock %}
 
+{%block css%}
+<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 {% endblock %}
 
 
-
 {% block content %}
-
-
-<h1>Listado de Trabajadores</h1>
-
-<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <a href="{% url 'form_trab'%}"> <button type="button" class="btn btn-dark">+ Nuevo
-            Trabajador</button></a>
-</div>
-<hr>
-<section class="webdesigntuts-workshop">
-    <form action="" method="">
-        <input type="search" placeholder="Ingrese Busqueda">
-        <button class="btn btn-secondary"> Buscar</button>
-    </form>
-</section>
-<br>
 <table style="border: 30px solid rgb(255, 255, 255);" class="table table-striped table-hover table-responsive-sm">
+    <!-- H1--> 
+    <h1 style=" border: 30px solid rgb(255, 255, 255);">Listado de Trabajadores</h1>
+
     <thead class="table-dark">
+<hr>
+
+<!-- boton de Nuevo centro-->
+<div style="border-right: 30px solid rgb(255, 255, 255);" class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a href="{% url 'form_trab'%}"> <button type="button" class="btn btn-dark"> <i class="icon ion-ios-add"></i> Nuevo Trabajador</button></a>
+ 
+  </div>
+
+    
+    <section  style="border-left:30px solid rgb(255, 255, 255);" class="webdesigntuts-workshop">
+        <form action="" method="">
+            <input type="search" placeholder="Ingrese Busqueda">
+            <button class="btn btn-secondary"><i class="icon ion-md-search"></i>  Buscar</button>
+        </form>
+    </section>
         <tr>
-            <th scope="col">Rut</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellidos</th>
-            <th scope="col">Email</th>
-            <th scope="col">Acciones</th>
+            <th scope="col"><i class="icon ion-ios-finger-print"></i> Rut</th>
+            <th scope="col"><i class="icon ion-ios-list-box"></i> Nombre</th>
+            <th scope="col"><i class="icon ion-ios-list-box"></i> Apellidos</th>
+            <th scope="col"><i class="icon ion-md-mail-open"></i> Email</th>
+            <th scope="col"><i class="icon ion-ios-arrow-down"></i> Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -62,8 +64,9 @@
             <td>{{Trabajadores.nombre}} </td>
             <th>{{Trabajadores.apellido}}</th>
             <td>{{Trabajadores.email}}</td>
-            <td><a href="{% url 'edit_trab' Trabajadores.id %}" class="btn btn-sm btn-block btn-info">Editar</a>
-                <a href="#" onclick="eliminarTrabajador({{ Trabajadores.id }})" class="btn btn-sm btn-block btn-danger">Eliminar</a></td>
+            <td><a href="{% url 'edit_trab' Trabajadores.id %}" class="btn btn-sm btn-block btn-info"><i class="icon ion-md-create"></i> Editar</a>
+                <a href="#" onclick="eliminarTrabajador({{ Trabajadores.id }})" 
+                    class="btn btn-sm btn-block btn-danger"><i class="icon ion-ios-trash"></i> Eliminar</a></td>
             </td>
         </tr>
         {% endfor %}
@@ -73,7 +76,7 @@
 <footer>
     <div class="d-flex justify-content-center">
         <a href="{% url 'Dashboard'%}"> <button type="button" type="button"
-                class="btn btn-secondary">Volver</button></a>
+                class="btn btn-secondary"><i class="icon ion-md-arrow-back"></i> Volver</button></a>
     </div>
 </footer>
 
