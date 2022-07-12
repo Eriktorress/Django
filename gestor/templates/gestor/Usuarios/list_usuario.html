@@ -8,7 +8,7 @@
             text: "Esta acción no se puede deshacer!",
             icon: 'warning',
             showCancelButton: true,
-            cancelButtontext: '',
+            cancelButtontext:"",
             confirmButtonText: 'Si, Eliminar!',
             confirmButtonColor:  '#d33',
             cancelButtonColor:'#3085d6',
@@ -64,9 +64,9 @@
             <th>{{Usuarios.nombre_com}}</th>
             <td>{{Usuarios.apelllidos_usu}} </td>
             <th>{{Usuarios.email}}</th>
-            <td><a href="{% url 'edit_usuario' Usuarios.id %}" class="btn btn-sm btn-block btn-info">Editar</a>
+            <td><a href="{% url 'edit_usuario' Usuarios.id %}" class="btn btn-sm btn-block btn-info"><i class="icon ion-md-create"></i> Editar</a>
                 <a href="#" onclick="eliminarUsuarios({{ Usuarios.id }})"
-                    class="btn btn-sm btn-block btn-danger">Eliminar</a></td>
+                    class="btn btn-sm btn-block btn-danger"><i class="icon ion-ios-trash"></i>  Eliminar</a></td>
             </td>
         </tr>
         {% endfor %}
@@ -77,7 +77,7 @@
 <footer>
     <div class="d-flex justify-content-center">
         <a href="{% url 'Dashboard'%}"> <button type="button" type="button"
-                class="btn btn-secondary">Volver</button></a>
+                class="btn btn-secondary"><i class="icon ion-md-arrow-back"></i> Volver</button></a>
     </div>
 </footer>
 
