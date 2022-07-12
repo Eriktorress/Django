@@ -23,15 +23,23 @@
     <header id="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid" id="container">
+
+                <!-- ICONO DEL DESPLEGABLE -->
                 <div class="icon__menu" class="col col-lg-2">
                     <i class="icon ion-md-menu" id="btn_open"></i>
                 </div>
+                <!-- ****************************************** -->
+
+                <!-- BUSCADOR DE LA MITAD -->
                 <form class="d-flex position-relative d-inline-block">
                     <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
                     <button class="btn btn-search position-absolute" type="submit"><i
                             class="icon ion-md-search"></i></button>
                 </form>
+                <!-- ******************************************* -->
 
+
+                <!-- USUARIO, CERRAR SESION, CANCELAR, AUTENTIFICADOR -->
                 <div class="d-flex" class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto ">
                         <li class="nav-item dropdown ">
@@ -50,77 +58,92 @@
                                 <li><button class="dropdown-item" type="button" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal">Cerrar sesión</button></li>
                             </ul>
+
                             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+
                                 <div class="modal-dialog" role="document">
+
                                     <div class="modal-content">
+
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">¿Está seguro que desea cerrar
-                                                sesión?</h5>
+                                            
+                                            <h5 class="modal-title" id="exampleModalLabel">
+                                                ¿Está seguro que desea cerrar sesión?
+                                            </h5>
+                                            
                                             <button type="button" class="close" data-bs-dismiss="modal"
                                                 aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
+
                                         </div>
+
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-bs-dismiss="modal">Seguir navegando</button>
                                             <a href="{% url 'login'%}"> <button type="button"
                                                 class="btn btn-danger">Cerrar sesión</button></a>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
                         </li>
                     </ul>
                 </div>
+                <!-- *****************************************************************************************************-->
+
             </div>
         </nav>
     </header>
 
-
+    <!-- BARRA LATERAL DESPLEGABLE -->
     <div class="d-flex">
+
         <div id="sidebar-container" class="bg-primary">
+
             <div class="logo">
                 <h4 class="text-light font-weight-bold ">GESTIÓN WEB</h4>
             </div>
 
             <div class="menu">
-                <a href="{% url 'Dashboard'%}" class="d-block text-light p-4"><i class="icon ion-md-apps mr-2 lead"></i>
-                    Tablero </a>
+                <!-- TABLERO -->
+                <a href="{% url 'Dashboard'%}" class="d-block text-light p-4"><i class="icon ion-md-apps mr-2 lead"></i> Tablero </a>
+                
+                <!-- CONFIGUARACION -->
                 <a href="#" class="d-block text-light p-4" class="btn btn-secondary dropdown-toggle"
                     id="dropdownMenuButton" data-bs-toggle="dropdown"><i class="icon ion-md-construct mr-2 lead"></i>
                     Configuración
                 </a>
+
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li><a class="dropdown-item" href="{% url 'list_usua'%}">Usuarios</a></li>
                     <li><a class="dropdown-item" href="#">Perfil</a></li>
                 </ul>
 
+                <!-- ORGANIZACION -->
                 <a href="#" class="d-block text-light p-4" class="btn btn-secondary dropdown-toggle"
                     id="dropdownMenuButton" data-bs-toggle="dropdown"><i class="icon ion-md-briefcase"></i>
                     Organización
                 </a>
+
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li><a class="dropdown-item" href="{% url 'list_centr'%}">Centros de trabajo</a></li>
                     <li><a class="dropdown-item" href="{% url 'listado-trabajador'%}">Trabajadores</a></li>
                 </ul>
-                </a>
 
             </div>
-
         </div>
 
-
         <div style="border: 1px solid rgb(255,255,255); width: 190%;">
-
-
             <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
             {% block content %}
             {% endblock %}
-
         </div>
+        
+    </div>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
