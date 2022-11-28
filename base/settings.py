@@ -70,7 +70,7 @@ CORS_ORIGIN_WHITELIST =  [
 
 ROOT_URLCONF = 'base.urls'
 
-TEMPLATES = [
+TEMPLATE = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
