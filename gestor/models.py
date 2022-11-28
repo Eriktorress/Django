@@ -65,4 +65,11 @@ class Centros (models.Model):
 
     def __str__(self) :
         return f"{self.tipo_centro}-{self.direccion} - {self.comuna}- {self.region}"
-    
+
+# Modelo para API REST
+
+class Tipo_especialidad (models.Model):
+    tip_especi = models.CharField (verbose_name='Tipo especialidad', max_length=100)
+
+    def __str__(self) :
+        return f"{self.tip_especi}"

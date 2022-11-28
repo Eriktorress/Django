@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render, get_object_or_404
-from .serializers import ProfSerializer
+from .serializers import ProfSerializer, TipocenSerializer,TipoespecualidadSerializer
 from rest_framework import viewsets
-from .models import Centros, Profesion, Trabajadores, Usuarios
+from .models import Centros, Profesion, Trabajadores, Usuarios,Tipo_centro, Tipo_especialidad
 from .forms import CustomUserCreationForm, TrabajadorForm, CentroForm, UsuarioForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
@@ -13,7 +13,13 @@ class Profview(viewsets.ModelViewSet):
     queryset = Profesion.objects.all()
     serializer_class = ProfSerializer
     
+class tipocentroview(viewsets.ModelViewSet):
+    queryset = Tipo_centro.objects.all()
+    serializer_class = TipocenSerializer 
     
+class tipoespecialidadview(viewsets.ModelViewSet):
+    queryset = Tipo_especialidad.objects.all()
+    serializer_class = TipoespecualidadSerializer     
 #---- Paginas con lo inicial -------- 
 
 def home(request):  #PAGINA 1

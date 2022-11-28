@@ -3,13 +3,15 @@ from django.urls import path, include
 from .views import editar_trab,form_trab,home,Dashboard,\
     list_trab,form_usuario,eliminar_trab, list_centro, form_centr,\
     editar_cent,eliminar_centr,list_usuarios,eliminar_usuario,Profview,editar_usuario,\
-    registro_usuario
+    registro_usuario,tipocentroview,tipoespecialidadview
 from rest_framework import routers
 
 
 
 router = routers.DefaultRouter()
 router.register('profesion', Profview)
+router.register('tipo_centro', tipocentroview)
+router.register('tipo_especialidad',tipoespecialidadview)
 
 
 urlpatterns = [
