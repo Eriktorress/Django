@@ -139,7 +139,7 @@ def eliminar_trab(request, id):
 #Listar centros de trabajos
 def list_centro(request):
     listado = Centros.objects.all();
-    return render(request, 'gestor/Centros/list_centr.html', {'listado':listado})
+    return render(request, 'list_centr.html', {'listado':listado})
 
 #Formulario centro de trabajo
 def form_centr(request):
